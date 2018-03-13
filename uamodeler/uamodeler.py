@@ -346,7 +346,7 @@ class UaModeler(QMainWindow):
 
         self.refs_ui = RefsWidget(self.ui.refView)
         self.refs_ui.error.connect(self.show_error)
-        self.refs_ui.reference_changed.connect(self.tree_ui.reload_current)  # FIXME: shoudl reload a specific node
+        #self.refs_ui.reference_changed.connect(self.tree_ui.reload_current)  # FIXME: shoudl reload a specific node
         self.attrs_ui = AttrsWidget(self.ui.attrView, show_timestamps=False)
         self.attrs_ui.error.connect(self.show_error)
         self.idx_ui = NamespaceWidget(self.ui.namespaceView)
@@ -402,7 +402,7 @@ class UaModeler(QMainWindow):
         self._contextMenu.addAction(self.ui.actionPaste)
         self._contextMenu.addAction(self.ui.actionDelete)
         self._contextMenu.addSeparator()
-        self._contextMenu.addAction(self.tree_ui.actionReload)
+        #self._contextMenu.addAction(self.tree_ui.actionReload)
         self._contextMenu.addSeparator()
         self._contextMenu.addAction(self.ui.actionAddFolder)
         self._contextMenu.addAction(self.ui.actionAddObject)
@@ -468,7 +468,7 @@ class UaModeler(QMainWindow):
             return
         self.attrs_ui.save_state()
         self.refs_ui.save_state()
-        self.tree_ui.save_state()
+        #self.tree_ui.save_state()
         self.settings.setValue("main_window_width", self.size().width())
         self.settings.setValue("main_window_height", self.size().height())
         self.settings.setValue("main_window_state", self.saveState())
